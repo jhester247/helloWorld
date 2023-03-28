@@ -4,9 +4,30 @@
     <meta charset="UTF-8">
     <title>Contact Information</title>
 </head>
+<div class="container"
+     <body>
+     {% if form_submitted %}
+        <h2>Thank you for completing my survey!</h2>
+     <div>
+         <p>First Name Entered: {{ request.form.get('first_name')}}</p>
+         <p>Last Name Entered: {{ request.form.get('last_name')}}</p>
+         <p>Email Entered: {{ request.form.get('email')}}</p>
+
+         <p><a href="{{ url_for('contact') }}">Complete my form again please!</a></p>
+
+
+     </div>
+
+
+
+
+     </body>
+
+{% else %}
+
 <body>
 
-<form class="row g-3" action="{{ url_for('contact') }}" method="post"></form>
+<form class="row g-3" action="{{ url_for('contact') }}" method="post">
 <div class="col-md-6">
     <label for="first_name" class="form-label">First Name</label>
     <input type="text" class="form-control" id="first_name" name="first_name">
