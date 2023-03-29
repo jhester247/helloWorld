@@ -1,12 +1,7 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Favorite-Course</title>
-</head>
-<body>
+{% extends "base.html" %}
 
-You entered your favorite course as: {{ request.args.get('favorite_course') }} {{ request.args.get('favorite_professor') }}
-<!-- Added a message for the User -->
-</body>
-</html>
+{% block body %}
+    <h1>My Favorite Course</h1>
+    <p>You entered your favorite course as: {{ request.args.get('favorite_course') }} {{ request.args.get('favorite_professor') }}</p>
+    <p>Thank you for submitting your favorite course!</p>
+{% endblock %}
